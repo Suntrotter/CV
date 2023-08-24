@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Resume</title>
+</head>
+<body>
+       <img src="{{ photo }}" alt="me"/>
+
+       <hr>
+       <h3>About me</h3>
+
+        <div>
+            {% for item in text %}
+   <ul>
+       <li>
+           {{item.text}}
+
+       </li>
+   </ul>
+
+{% endfor %}
+        </div>
+
+<hr>
+       <h3>Skills</h3>
+<div>
+    {% for item in skill %}
+   <ul>
+       <li>
+           {{item.skill}}
+
+       </li>
+   </ul>
+    {% endfor %}
+        </div>
+
+<hr>
+       <h3>Education</h3>
+<div>
+    {% for item in place_of_study %}
+   <ul>
+       <li>
+           {{item.place_of_study}}
+
+       </li>
+   </ul>
+    {% endfor %}
+        </div>
+<hr>
+       <h3>Projects</h3>
+<div>
+    {% for item in project %}
+   <ul>
+       <li>
+           {{item.project}}
+
+       </li>
+   </ul>
+    {% endfor %}
+        </div>
+</body>
+</html>
